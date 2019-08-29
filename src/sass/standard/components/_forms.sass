@@ -103,6 +103,7 @@ textarea
   &.form-item--required
     label
       position: relative
+<<<<<<< Updated upstream
     label:not(.custom-radio &):not(.custom-checkbox &)::after
       content: " "
       display: block
@@ -114,6 +115,19 @@ textarea
       right: ms(-6) * -2
       top: 0
       bottom: initial
+=======
+      &:not(.custom-radio &):not(.custom-checkbox &)
+        &::after
+          content: " "
+          display: block
+          width: ms(-6)
+          height: ms(-6)
+          border-radius: 100%
+          background-color: $secondary-pop
+          position: absolute
+          right: ms(-6) * -2
+          top: 0
+>>>>>>> Stashed changes
   &.form-item--error
     label, span
       color: $error
