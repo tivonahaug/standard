@@ -1,0 +1,39 @@
+name: buildAndPublish
+
+on:
+  # Triggers the workflow on push
+  push:
+    branches: [ master ]
+
+  # Also trigger on release created events
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ADMIN_PAT_TOKEN }}
+
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        env: 
+          GITHUB_TOKEN: ${{ secrets.ADMIN_PAT_TOKEN }}
+        with:
+          skip-tag: 'true'
+          default: 'patch'
+          target-branch: 'main'
+          # [skip ci] is a Github feature that will cause this commit not to re-trigger Actions
+          # https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
+          commit-message: 'CI: Automatically set version {{version}} [skip ci]'
+          # These are keywords to look for in new commit messages (since the last release)
+          # They are case sensitive
+          major-wording: '[MAJOR],[Major],[major]'
+          minor-wording: '[MINOR],[Minor],[minor]'
+          # patch-wording: '[PATCH],[Patch],[patch]'
+          rc-wording: '[RELEASE],[Release],[release],[CANDIDATE],[Candidate],[candidate]'
