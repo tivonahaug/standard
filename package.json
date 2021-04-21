@@ -1,6 +1,6 @@
 {
   "name": "@tivonahaug/standard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Standard",
   "main": "gulpfile.js",
   "author": "Devon Tivona and Katie Porter",
