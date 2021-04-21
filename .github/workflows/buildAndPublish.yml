@@ -27,7 +27,7 @@ jobs:
         with:
           skip-tag: 'true'
           default: 'patch'
-          target-branch: 'main'
+          target-branch: 'master'
           # [skip ci] is a Github feature that will cause this commit not to re-trigger Actions
           # https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
           commit-message: 'CI: Automatically set version {{version}} [skip ci]'
