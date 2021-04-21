@@ -1,7 +1,7 @@
 # standard
 # Contributing
 
-Merging a PR in this repository (or pushing a commit to `main`) will automatically build and publish a new version
+Merging a PR in this repository (or pushing a commit to `master`) will automatically build and publish a new version
 
 ## Versions
 
