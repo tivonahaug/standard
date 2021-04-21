@@ -1,5 +1,5 @@
 {
-  "name": "standard",
+  "name": "@tivonahaug/standard",
   "version": "1.0.0",
   "description": "The Standard",
   "main": "gulpfile.js",
